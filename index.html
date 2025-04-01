@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voir en Réalité Augmentée</title>
+    <title>Chargement AR...</title>
+</head>
+<body>
+    <h1>Chargement de la Réalité Augmentée...</h1>
+
     <script>
-        function openAR() {
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-            if (isIOS) {
-                // Ouvre le modèle en Quick Look sur iOS
-                window.location.href = "https://nonoast.github.io/model_aleks/wateringcan.usdz";
-            } else {
-                // Ouvre Google Scene Viewer sur Android
-                window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only";
-            }
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        
+        if (isIOS) {
+            // Créer un lien caché et le cliquer automatiquement
+            const link = document.createElement("a");
+            link.setAttribute("rel", "ar");
+            link.setAttribute("href", "https://nonoast.github.io/model_aleks/wateringcan.usdz");
+            document.body.appendChild(link);
+            link.click();
+        } else {
+            // Redirection vers Google Scene Viewer sur Android
+            window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only";
         }
     </script>
-</head>
-<body onload="openAR()">
-    <h1>Chargement de la Réalité Augmentée...</h1>
 </body>
 </html>
+
