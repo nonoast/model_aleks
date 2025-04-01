@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chargement AR...</title>
+    <title>Test Quick Look iOS</title>
 </head>
 <body>
-    <h1>Chargement de la Réalité Augmentée...</h1>
+    <h1>Tester Quick Look sur iOS</h1>
 
-    <script>
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        
-        if (isIOS) {
-            // Création d'un lien invisible pour Quick Look
-            const link = document.createElement("a");
-            link.setAttribute("rel", "ar");
-            link.setAttribute("href", "https://nonoast.github.io/model_aleks/wateringcan.usdz");
-            document.body.appendChild(link);
-            link.click();
-        } else {
-            // Redirection Android (Google Scene Viewer)
-            window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only";
-        }
-    </script>
+    <p>Si tu es sur iPhone ou iPad, clique sur ce lien :</p>
+
+    <a rel="ar" href="https://nonoast.github.io/model_aleks/wateringcan.usdz">
+        <button>Ouvrir en AR</button>
+    </a>
 </body>
 </html>
+
 
 
