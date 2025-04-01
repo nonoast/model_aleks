@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modèle 3D en AR</title>
+    <title>Voir en Réalité Augmentée</title>
+    <script>
+        function openAR() {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            if (isIOS) {
+                // Ouvre le modèle en Quick Look sur iOS
+                window.location.href = "https://nonoast.github.io/model_aleks/wateringcan.usdz";
+            } else {
+                // Ouvre Google Scene Viewer sur Android
+                window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only";
+            }
+        }
+    </script>
 </head>
-<body>
-    <h1>Scan le QR Code pour voir le modèle en AR</h1>
-    <a href="https://www.linkedin.com/in/noahastier" rel="ar">
-        <button>Voir en Réalité Augmentée</button>
-    </a>
+<body onload="openAR()">
+    <h1>Chargement de la Réalité Augmentée...</h1>
 </body>
 </html>
