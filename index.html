@@ -17,8 +17,9 @@
                 const link = document.createElement("a");
                 link.setAttribute("rel", "ar");
                 link.setAttribute("href", "https://nonoast.github.io/model_aleks/wateringcan.usdz");
-                // Simule le clic automatiquement
+                link.innerHTML = "Lancer l'expérience AR";
                 document.body.appendChild(link);
+                // Simule le clic automatiquement
                 link.click(); // Ceci va ouvrir l'expérience AR en Quick Look
             } else {
                 // Si ce n'est pas un iPhone/iPad, on redirige vers la version Android (Google Scene Viewer)
@@ -27,9 +28,20 @@
         }
 
         // Lancer l'AR au chargement de la page
-        window.onload = launchAR;
+        window.onload = function() {
+            // Ajouter un message pour informer l'utilisateur
+            const message = document.createElement("p");
+            message.textContent = "Si l'expérience AR ne se lance pas automatiquement, veuillez cliquer sur le lien ci-dessous.";
+            document.body.appendChild(message);
+
+            // Lancer l'AR
+            launchAR();
+        };
     </script>
 </head>
+<body>
+    <!-- Contenu de la page -->
+</body>
 </html>
 
 
