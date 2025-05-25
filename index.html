@@ -10,7 +10,7 @@
             return /iPad|iPhone|iPod/.test(navigator.userAgent);
         }
 
-        // Fonction pour lancer l'expérience AR automatiquement en fonction du type d'appareil
+        // Fonction pour lancer l'expérience AR
         function launchAR() {
             if (isIOS()) {
                 // Si l'utilisateur est sur un iPhone/iPad, on prépare un lien avec Quick Look
@@ -22,8 +22,8 @@
                 // Simule le clic automatiquement
                 link.click(); // Ceci va ouvrir l'expérience AR en Quick Look
             } else {
-                // Si ce n'est pas un iPhone/iPad, on redirige vers la version Android (Google Scene Viewer)
-                window.location.href = "https://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only";
+                // Si ce n'est pas un iPhone/iPad, on utilise l'Intent URL pour Android
+                window.location.href = "intent://arvr.google.com/scene-viewer/1.0?file=https://nonoast.github.io/model_aleks/Avocado.glb&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;";
             }
         }
 
@@ -43,7 +43,3 @@
     <!-- Contenu de la page -->
 </body>
 </html>
-
-
-
-
